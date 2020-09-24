@@ -19,15 +19,5 @@ public class AnimalController {
         }
         return json;
     }
-    public List <String> convertAnimal(String id){
-        List <String> json = new LinkedList<>();
-        Gson gson = new Gson();
-        AnimalDao animal = new AnimalDao();
-        List<AnimalEntity> listAnimal = animal.select(id);
-        for(int i =0; i <listAnimal.size();i++) {
-            json.add(gson.toJson(listAnimal.get(i)));
-        }
-        return json;
-    }
 
 }
